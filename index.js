@@ -51,6 +51,8 @@ const title = ['s tilte.online',
     'stilt e.online',
     'stil te.online',
     'sti lte.online',
+    's tilte.online',
+    ' stilte.online'
 ]
 const rate = 10;
 const source = document.getElementById('wrapper');
