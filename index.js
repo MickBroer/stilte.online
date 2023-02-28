@@ -51,12 +51,12 @@ async function addText(array){
         window.scrollTo(0, index);
         index = index + increment;
     }
+
+    addText(array);
 }
 
 async function main(){
     addText(textArray);
-    await new Promise(r => setTimeout(r, 100));
-    main();
 }
 
 main();
