@@ -26,7 +26,7 @@ const textArray =
         
         "Vorige week ontstond ophef nadat de Engelse uitgeverij Puffin bekendmaakte delen van de kinderboeken van Roald Dahl te hebben laten aanpassen. ", "Onder meer de woorden dik en lelijk werden weggelaten bij de beschrijving van een personage. ",
         
-        "Na de ophef die hierover ontstond volgde besloot de uitgever dat naast de originele edities naast de nieuwe teksten beschikbaar blijven. ", "De Nederlandse uitgever van Dahls boeken verandert vooralsnog niets aan de vertaalde teksten."
+        "Na de ophef die hierover ontstond volgde besloot de uitgever dat naast de originele edities naast de nieuwe teksten beschikbaar blijven. ", "De Nederlandse uitgever van Dahls boeken verandert vooralsnog niets aan de vertaalde teksten. "
     ];
 
 const title = ['s tilte.online',
@@ -61,7 +61,14 @@ increment = parseFloat(increment);
 let index = increment;
 let i = 0;
 
-
+function addLink(url, text){
+    const content = document.createElement('a');
+    const linkText = document.createTextNode(text);
+    content.appendChild(linkText);
+    content.title = "ha";
+    content.href = url;
+    source.appendChild(content);
+}
 
 async function addText(array){
     let sentence = array[
@@ -79,6 +86,7 @@ async function addText(array){
         window.scrollTo(0, index);
         index = index + increment;
     }
+    addLink('/liefdesgezang', 'click me ');
 
     addText(array);
 }
@@ -91,7 +99,8 @@ function animateTitle() {
 
 
 async function main(){
-    addText(textArray);
+    addText(textArray);    
+
     animateTitle()
 }
 
