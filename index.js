@@ -54,7 +54,7 @@ const title = ['s tilte.online',
     's tilte.online',
     ' stilte.online'
 ]
-const rate = 10;
+const rate = 10000 / screen.width;
 const source = document.getElementById('wrapper');
 let increment = window.getComputedStyle(source).getPropertyValue('font-size');
 increment = parseFloat(increment); 
@@ -80,8 +80,7 @@ async function addText(array){
         let content = document.createTextNode(
             sentence[i]
         );
-
-        await new Promise(r => setTimeout(r, 1));
+        await new Promise(r => setTimeout(r, rate));
         source.appendChild(content);
         window.scrollTo(0, index);
         index = index + increment;

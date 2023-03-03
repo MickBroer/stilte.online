@@ -1,9 +1,10 @@
 #websiteTitle {
     padding-left: 10%;
-    font-size: 200%;
+    font-size: x-large;
 }
 
 #wrapper {
     padding-left: 10%;
     padding-right: 10%;
+    font-size: small;
 }
