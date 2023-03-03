@@ -1,0 +1,10 @@
+body::-webkit-scrollbar{
+    display: none;
+}
+
+#wrapper{
+
+    overflow-y: hidden;
+    overflow-x: hidden;
+    font-size: small;
+}

@@ -1,10 +1,16 @@
+body{
+    overflow: hidden;
+}
+
 #websiteTitle {
-    padding-left: 10%;
+    padding-left: 5%;
+    padding-top: 2%;
     font-size: x-large;
 }
 
-#wrapper {
-    padding-left: 10%;
-    padding-right: 10%;
-    font-size: small;
+#text {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
 }
