@@ -29,31 +29,7 @@ const textArray =
         "Na de ophef die hierover ontstond volgde besloot de uitgever dat naast de originele edities naast de nieuwe teksten beschikbaar blijven. ", "De Nederlandse uitgever van Dahls boeken verandert vooralsnog niets aan de vertaalde teksten. "
     ];
 
-const title = ['s tilte.online',
-    'sti lte.online',
-    'stil te.online',
-    'stilt e.online',
-    'stilte .online',
-    'stilte. online',
-    'stilte.o nline',
-    'stilte.on line',
-    'stilte.onl ine',
-    'stilte.onli ne',
-    'stilte.onlin e',
-    'stilte.online',
-    'stilte.onlin e',
-    'stilte.onli ne',
-    'stilte.onl ine',
-    'stilte.on line',
-    'stilte.o nline',
-    'stilte. online',
-    'stilte .online',
-    'stilt e.online',
-    'stil te.online',
-    'sti lte.online',
-    's tilte.online',
-    ' stilte.online'
-]
+
 const rate = 10000 / screen.width;
 const source = document.getElementById('wrapper');
 let increment = window.getComputedStyle(source).getPropertyValue('font-size');
