@@ -41,7 +41,7 @@ async function addContent(sentence, linkBool, url){
 
         let content;
 
-        if (linkBool == 0){
+        if (linkBool < 90){
             content = document.createTextNode(
                 sentence[i]
             );
@@ -75,8 +75,8 @@ function chooseSentence(array){
 function main(){
     addContent(
         chooseSentence(textArray),
-        Math.round(
-            Math.random()
+        Math.floor(
+            Math.random() * 100
         ),
         '/liefdesgezang');    
 }
