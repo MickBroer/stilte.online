@@ -35,41 +35,50 @@ const source = document.getElementById('wrapper');
 let increment = window.getComputedStyle(source).getPropertyValue('font-size');
 increment = parseFloat(increment); 
 let index = increment;
-let i = 0;
-let scrollVal = 0;
 
-function addLink(url, text){
-    const content = document.createElement('a');
-    const linkText = document.createTextNode(text);
-    content.appendChild(linkText);
-    content.title = "ha";
-    content.href = url;
-    source.appendChild(content);
-}
-
-async function addText(array){
-    let sentence = array[
-        Math.floor(Math.random() * array.length)
-    ];
-
+async function addContent(sentence, linkBool, url){
     for (let i = 0; i < sentence.length; i++){
 
-        let content = document.createTextNode(
-            sentence[i]
-        );
+        let content;
 
-        await new Promise(r => setTimeout(r, rate));
-        source.appendChild(content);
+        if (linkBool == 0){
+            content = document.createTextNode(
+                sentence[i]
+            );
+            await new Promise(r => setTimeout(r, rate));
+            source.appendChild(content);
+            }
+
+        else {
+            content = document.createElement('a');
+            content.title = "ha";
+            content.href = url;
+            content.innerHTML = sentence[i]; 
+            await new Promise(r => setTimeout(r, rate));
+            source.appendChild(content);
+        }
         
         window.scrollTo(0, index);
 
         index = index + increment;
     }
-    addLink('/liefdesgezang', 'click me ');
-
-    addText(array);
+    main();
 }
 
+function chooseSentence(array){
+    let sentence = array[
+        Math.floor(Math.random() * array.length)
+    ];
+    return sentence;
+}
 
-addText(textArray);    
+function main(){
+    addContent(
+        chooseSentence(textArray),
+        Math.round(
+            Math.random()
+        ),
+        '/liefdesgezang');    
+}
 
+main();
