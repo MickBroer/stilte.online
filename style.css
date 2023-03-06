@@ -14,3 +14,30 @@ body{
     margin-right: auto;
     width: 60%;
 }
+
+.slider{
+    margin: auto;
+    position: absolute;
+    display: grid;
+    place-items: center;
+}
+
+.slide-track{
+    display: flex;
+    animation: scroll 20s linear infinite;
+}
+
+.slide{
+    display: flex;
+    padding: 2%;
+    font-size: xx-large;
+}
+
+@keyframes scroll {
+    0% {
+        transform:translateX(500%);
+    }
+    100% {
+        transform: translateX(-500%);
+    }
+}

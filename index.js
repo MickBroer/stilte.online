@@ -26,12 +26,19 @@ const title = ['s tilte.online',
 
 const text = document.getElementById('text');
 
-text.style.height = screen.height * 0.65 + "px";
+
+
+text.style.height = screen.height * 0.5 + "px";
+
+const slide = document.querySelector("#slideText").innerHTML = "HAHAHHAHAHAHHAHAHHAH";
+console.log(slide);
+// slide.innerHTML = "gang";
 
 let i = 1;
 function animateTitle() {
     i >= title.length - 1 ? (i = 0) : i++,
     (document.title = title[i]),
-    setTimeout('animateTitle()', 200)
+    setTimeout('animateTitle()', 200);
 }
+
 animateTitle();
