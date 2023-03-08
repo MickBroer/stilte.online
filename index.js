@@ -56,7 +56,7 @@ function siteEnter(){
     wrapper.appendChild(iframe);
     const text = document.getElementById("text");
 
-    text.style.height = screen.height * 0.5 + "px";
+    text.style.height = screen.height * 0.6 + "px";
 
 }
 
