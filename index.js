@@ -1,3 +1,10 @@
+const welcome = document.getElementById("welcome");
+const wrapper = document.getElementById("wrapper");
+welcome.setAttribute("onmouseenter", "changeColor(1)");
+welcome.setAttribute("onmouseout", "changeColor(0)");
+welcome.setAttribute("onclick", "siteEnter()");
+
+let i = 1;
 const title = ['s tilte.online',
     'sti lte.online',
     'stil te.online',
@@ -24,21 +31,40 @@ const title = ['s tilte.online',
     ' stilte.online'
 ]
 
-const text = document.getElementById('text');
+function changeColor(bool){
+    if (bool == 1){
+        welcome.style.backgroundColor = "#D7D5EA";
+        welcome.style.cursor = "pointer";
+    }
+    else{
+        welcome.style.backgroundColor = "#FFFFFF";
+    }
+}
 
+function siteEnter(){
+    welcome.remove();
+    const siteTitle = document.createElement("p");
+    siteTitle.innerHTML = "stilte.online";
+    siteTitle.setAttribute("id", "websiteTitle")
+    wrapper.appendChild(siteTitle);
 
+    const iframe = document.createElement("iframe");
+    iframe.setAttribute("src", "/text/");
+    iframe.setAttribute("frameBorder", "0");
+    iframe.setAttribute("id", "text");
 
-text.style.height = screen.height * 0.5 + "px";
+    wrapper.appendChild(iframe);
+    const text = document.getElementById("text");
 
-const slide = document.querySelector("#slideText").innerHTML = "HAHAHHAHAHAHHAHAHHAH";
-console.log(slide);
-// slide.innerHTML = "gang";
+    text.style.height = screen.height * 0.5 + "px";
 
-let i = 1;
+}
+
 function animateTitle() {
     i >= title.length - 1 ? (i = 0) : i++,
     (document.title = title[i]),
     setTimeout('animateTitle()', 200);
+    
 }
 
 animateTitle();

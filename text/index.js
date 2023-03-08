@@ -105,6 +105,7 @@ async function addContent(sentence, linkBool, url){
         index = index + increment;
     }
     playfft();
+    playfft();
     main();
 }
 
@@ -117,7 +118,6 @@ function chooseSentence(array){
 
 function main(){
     let arr = markov(text);
-    console.log(arr);
     arr = arr.split();
     addContent(
         chooseSentence(arr),

@@ -2,6 +2,25 @@ body{
     overflow: hidden;
 }
 
+.enterSite{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding-top: 18%;
+    font-size: small;
+    width: 30%;
+    padding-left: 35%;
+    
+}
+
+#welcome{
+    border-style: solid;
+    border-width: thin;
+    font-size: large;
+    background-color: #FFFFFF;
+    width: 100%;
+}
+
 #websiteTitle {
     padding-left: 5%;
     padding-top: 2%;
@@ -13,31 +32,4 @@ body{
     margin-left: auto;
     margin-right: auto;
     width: 60%;
-}
-
-.slider{
-    margin: auto;
-    position: absolute;
-    display: grid;
-    place-items: center;
-}
-
-.slide-track{
-    display: flex;
-    animation: scroll 20s linear infinite;
-}
-
-.slide{
-    display: flex;
-    padding: 2%;
-    font-size: xx-large;
-}
-
-@keyframes scroll {
-    0% {
-        transform:translateX(500%);
-    }
-    100% {
-        transform: translateX(-500%);
-    }
 }
