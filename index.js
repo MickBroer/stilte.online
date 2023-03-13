@@ -129,9 +129,9 @@ animateTitle();
 createText();
 animateText();
 
-function resizeText(bool){
+function resizeText(){
     fontSize = window.innerHeight / numText * 0.65 + "px";
-    if (bool == 1){
+    if (resizeBool == 1){
         for (let i = 0; i < numText; i++){
             const element = document.getElementById("txt" + i);
             element.style.fontSize = fontSize;
@@ -142,4 +142,4 @@ function resizeText(bool){
     }
 }
 
-window.addEventListener('resize', resizeText(resizeBool), true);
+window.addEventListener('resize', resizeText, true);
