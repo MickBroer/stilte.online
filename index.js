@@ -71,7 +71,7 @@ function animateTitle() {
     
 }
 
-const numText = 30;
+const numText = 40;
 let fontSize = window.innerHeight / numText * 0.65 + "px";
 const slidingText = document.getElementById("slidingText");
 const textArray = [];
@@ -104,10 +104,9 @@ async function animateText(){
 }
 
 class TextElement {
-    constructor(pos, element, index) {
+    constructor(pos, element){
         this.pos = pos;
         this.element = document.getElementById(element);
-        this.index = index;
     }
 
     move(){
@@ -117,12 +116,11 @@ class TextElement {
 
         if (this.pos >= window.innerWidth){
             this.reset();
-            // randomNumbers[this.index] = 0;
         }
     }
 
     reset(){
-        this.pos = window.innerWidth * -0.3;
+        this.pos = window.innerWidth * -0.5;
         this.element.style.left = this.pos + "px";
     }
 }
