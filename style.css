@@ -2,25 +2,6 @@ body{
     overflow: hidden;
 }
 
-.enterSite{
-    display: flex;
-    align-items: center;
-    text-align: center;
-    padding-top: 18%;
-    font-size: small;
-    width: 30%;
-    padding-left: 35%;
-    
-}
-
-#welcome{
-    border-style: solid;
-    border-width: thin;
-    font-size: large;
-    background-color: #FFFFFF;
-    width: 100%;
-}
-
 #websiteTitle {
     padding-left: 5%;
     padding-top: 2%;
@@ -32,4 +13,25 @@ body{
     margin-left: auto;
     margin-right: auto;
     width: 60%;
+}
+
+#slidingText{
+    padding: 5%;
+    overflow: hidden;
+}
+
+#welcome{
+    border-style: solid;
+    border-width: thin;
+    font-size: large;
+    background-color: #FFFFFF;
+    width: 150%;
+}
+
+.enterSite{
+    position: absolute;
+    top: 50%;
+    left: 47.5%;
+    text-align: center;
+    transform: translate(50, 50);
 }

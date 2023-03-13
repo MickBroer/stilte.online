@@ -5,6 +5,8 @@ welcome.setAttribute("onmouseout", "changeColor(0)");
 welcome.setAttribute("onclick", "siteEnter()");
 
 let i = 1;
+let resizeBool = 1;
+
 const title = ['s tilte.online',
     'sti lte.online',
     'stil te.online',
@@ -42,6 +44,8 @@ function changeColor(bool){
 }
 
 function siteEnter(){
+    resizeBool = 0;
+    slidingText.remove();
     welcome.remove();
     const siteTitle = document.createElement("p");
     siteTitle.innerHTML = "stilte.online";
@@ -67,4 +71,77 @@ function animateTitle() {
     
 }
 
+const numText = 30;
+let fontSize = window.innerHeight / numText * 0.65 + "px";
+const slidingText = document.getElementById("slidingText");
+const textArray = [];
+const randomNumbers = [];
+const intervalRate = 30;
+
+function createText(){
+    for (let i = 0; i < numText; i++){
+        const element = document.createElement("p");
+        element.style.fontSize = fontSize;
+        element.style.margin = 1 / numText + "px";
+        element.style.overflow = "hidden";
+        element.style.alignItems = "center";
+        element.style.position = "relative";
+        element.setAttribute("id", "txt" + i);
+        element.innerHTML = "txtxttxtxtxtxtxtxtxtxtxtxtxtxtxtxtxtxtxtxtxtxtxtxtxtxt";
+        slidingText.appendChild(element);
+
+        textArray[i] = new TextElement(Math.round(Math.random() * window.innerWidth), "txt" + i, i);
+        randomNumbers[i] = Math.ceil( Math.random() * 100);
+    }
+};
+
+async function animateText(){
+    for (let i = 0; i < numText; i++){
+        textArray[i].move()
+    }
+    await new Promise(r => setTimeout(r, intervalRate));
+    animateText();
+}
+
+class TextElement {
+    constructor(pos, element, index) {
+        this.pos = pos;
+        this.element = document.getElementById(element);
+        this.index = index;
+    }
+
+    move(){
+        
+        this.pos++;
+        this.element.style.left = this.pos + "px";
+
+        if (this.pos >= window.innerWidth){
+            this.reset();
+            // randomNumbers[this.index] = 0;
+        }
+    }
+
+    reset(){
+        this.pos = window.innerWidth * -0.3;
+        this.element.style.left = this.pos + "px";
+    }
+}
+
 animateTitle();
+createText();
+animateText();
+
+function resizeText(bool){
+    fontSize = window.innerHeight / numText * 0.65 + "px";
+    if (bool == 1){
+        for (let i = 0; i < numText; i++){
+            const element = document.getElementById("txt" + i);
+            element.style.fontSize = fontSize;
+        }
+    }
+    else{
+        return;
+    }
+}
+
+window.addEventListener('resize', resizeText(resizeBool), true);
