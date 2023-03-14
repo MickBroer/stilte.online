@@ -38,7 +38,7 @@ function markov(array){
 
 const audio = [];
 const audioContext = new AudioContext();
-const numAudiofiles = 21;
+const numAudiofiles = 40;
 
 
 
@@ -50,8 +50,8 @@ for (let i = 0; i <= numAudiofiles; i++){
 function playAudio(){
     const randomFile = Math.floor(Math.random() * numAudiofiles);
     const audioContent = audio[randomFile];
-    audioContent.playbackRate = Math.random() / 2.0 + 0.75;
-    audioContent.preservesPitch = false;
+    audioContent.playbackRate = Math.random() / 3.0 + 0.5;
+    audioContent.preservesPitch = true;
     if (audioContext === "suspended") {
         audioContext.resume();
         audioContent.play();
